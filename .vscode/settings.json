@@ -1,0 +1,21 @@
+{
+  "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "window.zoomLevel": 1,
+  "workbench.iconTheme": "material-icon-theme",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+    "source.sortMembers": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+}
