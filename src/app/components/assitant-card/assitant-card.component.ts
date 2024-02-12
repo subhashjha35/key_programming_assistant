@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -13,6 +13,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 export class AssitantCardComponent {
   @Input() title = '';
   @Input() content = '';
-  @Input() featureAvailable: boolean = true;
+  @Input() isAvailable: boolean = false;
+  @Output() assistantCalled = new EventEmitter();
+
+  callAssistant(): void {
+    this.assistantCalled.emit();
+  }
+
 
 }
