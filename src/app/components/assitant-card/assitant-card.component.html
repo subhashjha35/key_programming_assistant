@@ -6,6 +6,8 @@
         <ng-content></ng-content>
     </mat-card-content>
     <mat-card-footer>
-        <button mat-raised-button color="primary">Open Assistant</button>
+        <div matTooltip="This feature is not yet developed" [matTooltipDisabled]="featureAvailable" [matTooltipPosition]="'above'">
+            <button mat-raised-button color="primary" [disabled]="!featureAvailable">Open Assistant</button>
+        </div>
     </mat-card-footer>
 </mat-card>
