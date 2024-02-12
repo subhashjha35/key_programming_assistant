@@ -1,10 +1,8 @@
 .row {
     display: flex;
-    justify-content: space-around;
-    .card {
-        min-height: 300px;
-        height: calc(50vh - 20px);
-        min-width: 40vw;
-        text-align: center;
-    }
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }

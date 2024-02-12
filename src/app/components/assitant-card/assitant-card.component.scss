@@ -1,0 +1,23 @@
+
+.card {
+    width: 40lvw;
+    background-color: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+    height: 100%;
+    text-align: center;
+    .header {
+        display: flex;
+        justify-content: center;
+        font-size:x-large
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% - 20px);
+    }
+}
