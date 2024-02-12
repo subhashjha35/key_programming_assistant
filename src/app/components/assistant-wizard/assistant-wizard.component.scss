@@ -1,0 +1,14 @@
+.action-btn-container {
+    text-align: right;
+}
+.dialog-content {
+    display: flex;
+
+    flex-direction: column;
+    .step-container {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        text-align: center;
+    }
+}

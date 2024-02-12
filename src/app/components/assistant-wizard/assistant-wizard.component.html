@@ -1,0 +1,29 @@
+
+<mat-dialog-content class="dialog-content">
+    <span class="close-icon" [mat-dialog-close]="true">
+        <mat-icon>close</mat-icon>
+    </span>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Device</mat-label>
+            <mat-select name="device" id="device">
+                <mat-option value="device1">Device1</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Programmer</mat-label>
+            <mat-select name="device" id="device">
+                <mat-option value="alpha">Alpha</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <hr><hr>
+    <div class="step-container">
+        <ng-template #viewContainerRef></ng-template>
+    </div>
+    <div class="action-btn-container">
+        <button mat-raised-button color="primary" (click)="next()">Next</button>
+    </div>
+  </mat-dialog-content>
