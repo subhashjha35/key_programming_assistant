@@ -6,7 +6,7 @@
     <div>
         <mat-form-field appearance="fill">
             <mat-label>Device</mat-label>
-            <mat-select name="device" id="device">
+            <mat-select name="device" id="device" (valueChange)="setDevice('device1')" [disabled]="deviceSelected">
                 <mat-option value="device1">Device1</mat-option>
             </mat-select>
         </mat-form-field>
@@ -24,6 +24,6 @@
         <ng-template #viewContainerRef></ng-template>
     </div>
     <div class="action-btn-container">
-        <button mat-raised-button color="primary" (click)="next()">Next</button>
+        <button mat-raised-button color="primary" (click)="next()" [disabled]="(isAnyProgress$ | async)">{{ (isAnyProgress$ | async) ? 'Cancel' : btnText || 'Next' }}</button>
     </div>
   </mat-dialog-content>

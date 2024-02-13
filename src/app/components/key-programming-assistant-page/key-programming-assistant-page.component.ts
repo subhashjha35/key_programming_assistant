@@ -37,7 +37,8 @@ export class KeyProgrammingAssistantPageComponent implements OnInit, OnDestroy {
       data: { name: 'name' },
       width: '600px',
       minHeight: '500px',
-      panelClass: 'dialogC'
+      panelClass: 'dialogC',
+      disableClose: true,
     });
 
     dialogRef.afterClosed()
