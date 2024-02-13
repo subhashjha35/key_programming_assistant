@@ -2,11 +2,12 @@
     <span>Key Programming Assistant</span>
   </mat-toolbar>
 <div class="row">
-    <app-assitant-card
-        *ngFor="let feature of assistantFeatures"
-        [title]="feature.name"
-        [isAvailable]="feature.isAvailable"
-        (assistantCalled)="startAssistant(feature.id)">
-        {{ feature.content }}
-    </app-assitant-card>
+    @for(feature of assistantFeatures; track feature.id) {
+        <app-assitant-card
+            [title]="feature.name"
+            [isAvailable]="feature.isAvailable"
+            (assistantCalled)="startAssistant(feature.id)">
+            {{ feature.content }}
+        </app-assitant-card>
+    }
 </div>
