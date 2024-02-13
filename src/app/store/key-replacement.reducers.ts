@@ -1,7 +1,6 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { KeyReplacementActions } from ".";
-
-export type KeyReplacementWizardStatus = 'NO_WIZARD' | 'SELECT_DEVICE' | 'KEY_INVALIDATION' | 'PROGRAM_DEVICE' | 'DEVICE_READY';
+import { KeyReplacementWizardStatus } from "../types/assistant";
 
 export const keyReplacementFeatureKey = 'keyReplacement';
 
