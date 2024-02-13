@@ -6,3 +6,6 @@ export const selectDevice = createAction('[Key Replacement] select device', prop
 export const invalidateKey = createAction('[Key Replacement] invalidate key', props<{ deviceId: string }>());
 export const invalidateKeySuccess = createAction('[Key Replacement] invalidate key success');
 export const invalidateKeyAbort = createAction('[Key Replacement] invalidate key abort');
+
+export const programDevice = createAction('[Key Replacement] program device', props<{ deviceId: string }>());
+export const programDeviceSuccess = createAction('[Key Replacement] program device success');
