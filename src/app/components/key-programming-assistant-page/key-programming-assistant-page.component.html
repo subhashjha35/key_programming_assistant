@@ -2,7 +2,7 @@
     <span>Key Programming Assistant</span>
   </mat-toolbar>
 <div class="row">
-    @for(feature of assistantFeatures; track feature.id) {
+    @for(feature of assistantFeatures$ | async; track feature.id) {
         <app-assitant-card
             [title]="feature.name"
             [isAvailable]="feature.isAvailable"

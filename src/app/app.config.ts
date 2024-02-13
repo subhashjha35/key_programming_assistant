@@ -6,7 +6,8 @@ import { provideEffects } from '@ngrx/effects';
 import { provideState, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { routes } from './app.routes';
-import { KeyReplacementEffects, KeyReplacementReducers } from './store';
+import { AssistantEffects, AssistantReducers } from './store/assistant';
+import { KeyReplacementEffects, KeyReplacementReducers } from './store/key-replacement';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,7 +15,8 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync('animations'),
     provideStore(),
     provideState({ name: KeyReplacementReducers.keyReplacementFeatureKey, reducer: KeyReplacementReducers.reducer }),
-    provideEffects(KeyReplacementEffects.KeyReplacementEffects),
+    provideState({ name: AssistantReducers.AssistantFeatureKey, reducer: AssistantReducers.reducer }),
+    provideEffects(KeyReplacementEffects.KeyReplacementEffects, AssistantEffects.AssistantEffects),
     provideEffects(),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
   ],

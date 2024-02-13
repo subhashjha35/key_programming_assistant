@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Store } from '@ngrx/store';
 import { KeyReplacementService } from '../../../../services/key-replacement.service';
-import { KeyReplacementActions } from '../../../../store';
+import { KeyReplacementActions } from '../../../../store/key-replacement';
 @Component({
   selector: 'app-key-invalidation',
   standalone: true,

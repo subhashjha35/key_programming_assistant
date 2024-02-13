@@ -1,8 +1,8 @@
 import { Injectable, inject } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { exhaustMap, map } from "rxjs";
-import { KeyReplacementActions } from ".";
-import { KeyReplacementService } from "../services/key-replacement.service";
+import { KeyReplacementService } from "../../services/key-replacement.service";
+import { KeyReplacementActions } from "../key-replacement";
 
 @Injectable()
 export class KeyReplacementEffects {
