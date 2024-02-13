@@ -31,8 +31,7 @@ export class KeyProgrammingAssistantPageComponent implements OnInit, OnDestroy {
     this.store.dispatch(AssistantActions.fetchAssistantData());
   }
 
-  startAssistant(assistantId: string): void {
-    console.log(assistantId);
+  startAssistant(_assistantId: string): void {
     const dialogRef = this.dialog.open(AssistantWizardComponent, {
       data: { name: 'name' },
       width: '600px',

@@ -6,6 +6,6 @@ import { AssistantPageData } from '../types/assistant';
 @Injectable({providedIn: 'root'})
 export class AssistantService {
   fetchAllAssistantData = (): Observable<Array<AssistantPageData>> => {
-    return timer(2000).pipe(map(() => AssistantHelper.getAllAssistantFeatures()))
+    return timer(1000).pipe(map(() => AssistantHelper.getAllAssistantFeatures()))
   }
 }

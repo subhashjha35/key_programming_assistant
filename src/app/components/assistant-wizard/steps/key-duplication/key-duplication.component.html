@@ -2,5 +2,5 @@
 <p>Please enter the name for the new device</p>
 <mat-form-field>
     <mat-label>name</mat-label>
-    <input matInput value="" />
+    <input matInput value="" (blur)="handleChange($event)"/>
 </mat-form-field>

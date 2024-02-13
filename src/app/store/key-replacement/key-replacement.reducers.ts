@@ -52,6 +52,8 @@ export function reducer(state: KeyReplacementState | undefined, action: Action) 
 }
 export const selectState = createFeatureSelector<KeyReplacementState>(keyReplacementFeatureKey);
 
+export const selectSelectedDeviceId = createSelector(selectState, (state) => state.selectedDeviceId);
+
 export const selectIsInvalidateKeyInProgress = createSelector(selectState, (state) => state.invalidateKeyStatus === 'IN_PROGRESS');
 export const selectIsProgramDeviceInProgress = createSelector(selectState, (state) => state.programDeviceStatus === 'IN_PROGRESS');
 export const selectKeyReplacementStatusLoading = createSelector(selectIsInvalidateKeyInProgress, selectIsProgramDeviceInProgress, (invalidate, program) => invalidate || program);
