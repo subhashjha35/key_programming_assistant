@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AssistantWizardComponent } from './assistant-wizard.component';
 
 describe('AssistantWizardComponent', () => {
@@ -8,7 +9,8 @@ describe('AssistantWizardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AssistantWizardComponent]
+      imports: [AssistantWizardComponent],
+      providers: [provideAnimationsAsync('noop')]
     })
     .compileComponents();
 
