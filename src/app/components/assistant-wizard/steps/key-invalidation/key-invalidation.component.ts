@@ -1,6 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { Store } from '@ngrx/store';
 import { KeyReplacementService } from '../../../../services/key-replacement.service';
+import { KeyReplacementActions } from '../../../../store';
 @Component({
   selector: 'app-key-invalidation',
   standalone: true,
@@ -9,11 +11,10 @@ import { KeyReplacementService } from '../../../../services/key-replacement.serv
 })
 export class KeyInvalidationComponent implements OnInit {
   keyReplacementService = inject(KeyReplacementService);
+  store = inject(Store);
+
   isInvalidationCompleted = false;
   ngOnInit(): void {
-    this.keyReplacementService.invalidateDevice().subscribe(() => {
-      this.isInvalidationCompleted = true;
-      console.log('Invalidated Successful')
-    });
+    this.store.dispatch(KeyReplacementActions.invalidateKey({ deviceId: 'device1' }));
   }
 }
