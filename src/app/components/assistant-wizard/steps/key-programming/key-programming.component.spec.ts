@@ -8,10 +8,9 @@ describe('KeyProgrammingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KeyProgrammingComponent]
-    })
-    .compileComponents();
-    
+      imports: [KeyProgrammingComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(KeyProgrammingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

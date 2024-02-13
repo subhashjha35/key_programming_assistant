@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './device-selection.component.html',
 })
-export class DeviceSelectionComponent {
-
-}
+export class DeviceSelectionComponent {}

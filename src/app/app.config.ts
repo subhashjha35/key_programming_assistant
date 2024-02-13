@@ -14,10 +14,16 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimationsAsync('animations'),
     provideStore(),
-    provideState({ name: KeyReplacementReducers.keyReplacementFeatureKey, reducer: KeyReplacementReducers.reducer }),
-    provideState({ name: AssistantReducers.AssistantFeatureKey, reducer: AssistantReducers.reducer }),
+    provideState({
+      name: KeyReplacementReducers.keyReplacementFeatureKey,
+      reducer: KeyReplacementReducers.reducer,
+    }),
+    provideState({
+      name: AssistantReducers.AssistantFeatureKey,
+      reducer: AssistantReducers.reducer,
+    }),
     provideEffects(KeyReplacementEffects.KeyReplacementEffects, AssistantEffects.AssistantEffects),
     provideEffects(),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };

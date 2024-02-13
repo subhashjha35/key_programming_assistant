@@ -13,6 +13,6 @@ export class KeyDuplicationComponent {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleChange(event: { target: any }) {
-    this.store.dispatch(KeyReplacementActions.setNewDeviceName({ deviceName: event.target.value }))
+    this.store.dispatch(KeyReplacementActions.setNewDeviceName({ deviceName: event.target.value }));
   }
 }

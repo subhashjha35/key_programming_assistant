@@ -1,5 +1,14 @@
 import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
-import { AfterViewInit, ChangeDetectorRef, Component, ComponentRef, OnInit, ViewChild, ViewContainerRef, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ComponentRef,
+  OnInit,
+  ViewChild,
+  ViewContainerRef,
+  inject,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,13 +25,21 @@ import { KeyResultComponent } from './steps/key-result/key-result.component';
 @Component({
   selector: 'app-assistant-wizard',
   standalone: true,
-  imports: [MatDialogModule, MatSelectModule, MatButtonModule, MatIconModule, AsyncPipe, JsonPipe, NgIf],
+  imports: [
+    MatDialogModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatIconModule,
+    AsyncPipe,
+    JsonPipe,
+    NgIf,
+  ],
   templateUrl: './assistant-wizard.component.html',
   styleUrl: './assistant-wizard.component.scss',
 })
 export class AssistantWizardComponent implements AfterViewInit, OnInit {
-  @ViewChild("viewContainerRef", { read: ViewContainerRef }) vcr!: ViewContainerRef;
-  ref!: ComponentRef<DeviceSelectionComponent | KeyInvalidationComponent>
+  @ViewChild('viewContainerRef', { read: ViewContainerRef }) vcr!: ViewContainerRef;
+  ref!: ComponentRef<DeviceSelectionComponent | KeyInvalidationComponent>;
 
   store = inject(Store);
   dialog = inject(MatDialog);
@@ -30,7 +47,7 @@ export class AssistantWizardComponent implements AfterViewInit, OnInit {
 
   keyReplacementService = inject(KeyReplacementService);
 
-  devices: Array<{ id: string, name: string; }> = [];
+  devices: Array<{ id: string; name: string }> = [];
 
   deviceSelected = false;
 
@@ -39,8 +56,8 @@ export class AssistantWizardComponent implements AfterViewInit, OnInit {
     KeyInvalidationComponent,
     KeyDuplicationComponent,
     KeyProgrammingComponent,
-    KeyResultComponent
-  ]
+    KeyResultComponent,
+  ];
   currentStep: number = 0;
   btnText$ = new Subject<string>();
 

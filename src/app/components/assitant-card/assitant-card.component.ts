@@ -8,7 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   standalone: true,
   imports: [MatCardModule, MatButtonModule, MatTooltipModule],
   templateUrl: './assitant-card.component.html',
-  styleUrl: './assitant-card.component.scss'
+  styleUrl: './assitant-card.component.scss',
 })
 export class AssitantCardComponent {
   @Input() title = '';
@@ -19,6 +19,4 @@ export class AssitantCardComponent {
   callAssistant(): void {
     this.assistantCalled.emit();
   }
-
-
 }

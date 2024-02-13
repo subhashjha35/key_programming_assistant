@@ -14,7 +14,9 @@ export class KeyInvalidationComponent implements OnInit {
   keyReplacementService = inject(KeyReplacementService);
   store = inject(Store);
 
-  isInvalidationInProgress$ = this.store.select(KeyReplacementReducers.selectIsInvalidateKeyInProgress);
+  isInvalidationInProgress$ = this.store.select(
+    KeyReplacementReducers.selectIsInvalidateKeyInProgress,
+  );
 
   ngOnInit(): void {
     this.store.dispatch(KeyReplacementActions.invalidateKey({ deviceId: 'device1' }));

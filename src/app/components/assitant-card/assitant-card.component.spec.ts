@@ -8,10 +8,9 @@ describe('AssitantCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AssitantCardComponent]
-    })
-    .compileComponents();
-    
+      imports: [AssitantCardComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AssitantCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

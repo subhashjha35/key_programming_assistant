@@ -10,9 +10,8 @@ describe('KeyDuplicationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [KeyDuplicationComponent],
-      providers: [provideAnimationsAsync('noop')]
-    })
-    .compileComponents();
+      providers: [provideAnimationsAsync('noop')],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(KeyDuplicationComponent);
     component = fixture.componentInstance;

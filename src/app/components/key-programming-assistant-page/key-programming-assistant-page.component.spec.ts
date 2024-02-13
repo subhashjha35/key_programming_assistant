@@ -8,9 +8,8 @@ describe('KeyProgrammingAssistantPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KeyProgrammingAssistantPageComponent]
-    })
-    .compileComponents();
+      imports: [KeyProgrammingAssistantPageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(KeyProgrammingAssistantPageComponent);
     component = fixture.componentInstance;

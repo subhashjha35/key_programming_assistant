@@ -15,9 +15,11 @@ export class KeyProgrammingComponent implements OnInit {
   keyReplacementService = inject(KeyReplacementService);
   store = inject(Store);
 
-  isProgrammingInProgress$ = this.store.select(KeyReplacementReducers.selectIsProgramDeviceInProgress);
+  isProgrammingInProgress$ = this.store.select(
+    KeyReplacementReducers.selectIsProgramDeviceInProgress,
+  );
 
   ngOnInit(): void {
-    this.store.dispatch(KeyReplacementActions.programDevice({ deviceId: 'device1' }))
+    this.store.dispatch(KeyReplacementActions.programDevice({ deviceId: 'device1' }));
   }
 }

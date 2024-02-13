@@ -2,9 +2,7 @@ import { AsyncPipe } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import {
-  MatDialog
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
@@ -17,11 +15,11 @@ import { AssitantCardComponent } from '../assitant-card/assitant-card.component'
   standalone: true,
   imports: [MatCardModule, MatToolbarModule, MatButtonModule, AssitantCardComponent, AsyncPipe],
   templateUrl: './key-programming-assistant-page.component.html',
-  styleUrl: './key-programming-assistant-page.component.scss'
+  styleUrl: './key-programming-assistant-page.component.scss',
 })
 export class KeyProgrammingAssistantPageComponent implements OnInit, OnDestroy {
   store = inject(Store);
-  dialog = inject(MatDialog)
+  dialog = inject(MatDialog);
 
   assistantFeatures$ = this.store.select(AssistantReducers.selectAssistantData);
 
@@ -31,7 +29,7 @@ export class KeyProgrammingAssistantPageComponent implements OnInit, OnDestroy {
     this.store.dispatch(AssistantActions.fetchAssistantData());
   }
 
-  startAssistant(_assistantId: string): void {
+  startAssistant(): void {
     const dialogRef = this.dialog.open(AssistantWizardComponent, {
       data: { name: 'name' },
       width: '600px',
@@ -40,7 +38,8 @@ export class KeyProgrammingAssistantPageComponent implements OnInit, OnDestroy {
       disableClose: true,
     });
 
-    dialogRef.afterClosed()
+    dialogRef
+      .afterClosed()
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => {
         this.onAssistantDismissed();
@@ -48,7 +47,7 @@ export class KeyProgrammingAssistantPageComponent implements OnInit, OnDestroy {
   }
 
   onAssistantDismissed(): void {
-    console.log('Assistant is dismissed')
+    console.log('Assistant is dismissed');
   }
 
   ngOnDestroy(): void {

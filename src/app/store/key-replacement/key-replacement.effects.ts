@@ -18,12 +18,12 @@ export class KeyReplacementEffects {
         switchMap(() =>
           this.keyReplacementService
             .invalidateDevice()
-            .pipe(map(() => KeyReplacementActions.invalidateKeySuccess()))
+            .pipe(map(() => KeyReplacementActions.invalidateKeySuccess())),
         ),
-        takeUntil(this.actions$.pipe(ofType(KeyReplacementActions.invalidateKeyAbort)))
+        takeUntil(this.actions$.pipe(ofType(KeyReplacementActions.invalidateKeyAbort))),
       );
     },
-    { dispatch: true }
+    { dispatch: true },
   );
 
   newDeviceName$ = createEffect(
@@ -35,11 +35,11 @@ export class KeyReplacementEffects {
           this.keyReplacementService.setNewDeviceName({
             id: deviceId as string,
             name: action.deviceName,
-          })
-        )
+          }),
+        ),
       );
     },
-    { dispatch: false }
+    { dispatch: false },
   );
 
   programDevice$ = createEffect(
@@ -49,10 +49,10 @@ export class KeyReplacementEffects {
         switchMap(() =>
           this.keyReplacementService
             .invalidateDevice()
-            .pipe(map(() => KeyReplacementActions.programDeviceSuccess()))
-        )
+            .pipe(map(() => KeyReplacementActions.programDeviceSuccess())),
+        ),
       );
     },
-    { dispatch: true }
+    { dispatch: true },
   );
 }

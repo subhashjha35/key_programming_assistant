@@ -10,9 +10,8 @@ describe('AssistantWizardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AssistantWizardComponent],
-      providers: [provideAnimationsAsync('noop')]
-    })
-    .compileComponents();
+      providers: [provideAnimationsAsync('noop')],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AssistantWizardComponent);
     component = fixture.componentInstance;

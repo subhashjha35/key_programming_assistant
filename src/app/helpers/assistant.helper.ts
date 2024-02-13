@@ -1,4 +1,4 @@
-import { AssistantPageData } from "../types/assistant";
+import { AssistantPageData } from '../types/assistant';
 
 export class AssistantHelper {
   static readonly assistantFeatures: Array<AssistantPageData> = [
@@ -11,7 +11,7 @@ export class AssistantHelper {
       running operation ~ 3 sec), create a duplicate of this device with a new name and program the new device
       (long running operation ~ 5 sec). All these actions are connected together in the key replacement assistant,
       administrator can open this assistant, select the key and start the replacement process.`,
-      isAvailable: true
+      isAvailable: true,
     },
     {
       id: 'batchKeyDuplication',
@@ -22,10 +22,9 @@ export class AssistantHelper {
       only one key manually and duplicate this configuration for as many users as required. In this assistant,
       administrator needs to enter an amount of duplications to perform, then provide a new name for each
       duplicated key and program a new hardware device for it.`,
-      isAvailable: false
+      isAvailable: false,
     },
-  ]
+  ];
 
   static readonly getAllAssistantFeatures = () => this.assistantFeatures;
-
 }

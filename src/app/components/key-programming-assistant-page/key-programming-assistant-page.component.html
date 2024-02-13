@@ -6,7 +6,7 @@
         <app-assitant-card
             [title]="feature.name"
             [isAvailable]="feature.isAvailable"
-            (assistantCalled)="startAssistant(feature.id)">
+            (assistantCalled)="startAssistant()">
             {{ feature.content }}
         </app-assitant-card>
     }

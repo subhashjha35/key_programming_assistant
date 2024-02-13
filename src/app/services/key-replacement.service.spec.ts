@@ -7,24 +7,30 @@ describe('KeyReplacementService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [KeyReplacementService]
+      providers: [KeyReplacementService],
     });
     service = TestBed.inject(KeyReplacementService);
   });
 
-  it('should invalidate device after 5 time units', marbles(async m => {
-    const expectedMarble = '5s a|';
-    const expectedValue = { a: true };
+  it(
+    'should invalidate device after 5 time units',
+    marbles(async (m) => {
+      const expectedMarble = '5s a|';
+      const expectedValue = { a: true };
 
-    const result$ = await service.invalidateDevice();
-    m.expect(result$).toBeObservable(m.cold(expectedMarble, expectedValue));
-  }));
+      const result$ = await service.invalidateDevice();
+      m.expect(result$).toBeObservable(m.cold(expectedMarble, expectedValue));
+    }),
+  );
 
-  it('should program device after 3 seconds', marbles(async m => {
-    const expectedMarble = '3s a|';
-    const expectedValue = { a: true };
+  it(
+    'should program device after 3 seconds',
+    marbles(async (m) => {
+      const expectedMarble = '3s a|';
+      const expectedValue = { a: true };
 
-    const result$ = await service.programDevice();
-    m.expect(result$).toBeObservable(m.cold(expectedMarble, expectedValue));
-  }));
+      const result$ = await service.programDevice();
+      m.expect(result$).toBeObservable(m.cold(expectedMarble, expectedValue));
+    }),
+  );
 });

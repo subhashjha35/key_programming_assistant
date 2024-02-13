@@ -17,15 +17,9 @@ export class KeyResultComponent implements OnInit {
   deviceName$: Observable<string> = of('');
 
   ngOnInit(): void {
-    this.deviceName$ = this.store.select(KeyReplacementReducers.selectSelectedDeviceId)
-      .pipe(
-        map(
-          (id) => this.keyReplacementService
-            .getDevices()
-            .find(d => d.id === id)
-        ),
-        map((dev) => dev!.name)
-      )
+    this.deviceName$ = this.store.select(KeyReplacementReducers.selectSelectedDeviceId).pipe(
+      map((id) => this.keyReplacementService.getDevices().find((d) => d.id === id)),
+      map((dev) => dev!.name),
+    );
   }
-
 }

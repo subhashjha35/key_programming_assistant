@@ -8,10 +8,9 @@ describe('KeyInvalidationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KeyInvalidationComponent]
-    })
-    .compileComponents();
-    
+      imports: [KeyInvalidationComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(KeyInvalidationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
