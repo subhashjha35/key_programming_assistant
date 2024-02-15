@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { map, switchMap, takeUntil, tap } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs';
 import { KeyReplacementService } from '../../services/key-replacement.service';
 import { KeyReplacementActions, KeyReplacementReducers } from '../key-replacement';
 
@@ -20,7 +20,6 @@ export class KeyReplacementEffects {
             .invalidateDevice()
             .pipe(map(() => KeyReplacementActions.invalidateKeySuccess())),
         ),
-        takeUntil(this.actions$.pipe(ofType(KeyReplacementActions.invalidateKeyAbort))),
       );
     },
     { dispatch: true },
@@ -48,7 +47,7 @@ export class KeyReplacementEffects {
         ofType(KeyReplacementActions.programDevice),
         switchMap(() =>
           this.keyReplacementService
-            .invalidateDevice()
+            .programDevice()
             .pipe(map(() => KeyReplacementActions.programDeviceSuccess())),
         ),
       );

@@ -11,7 +11,7 @@ export interface KeyReplacementState {
   programDeviceStatus: 'NOT_STARTED' | 'IN_PROGRESS' | 'FINISHED';
 }
 
-const initialState: KeyReplacementState = {
+export const initialState: KeyReplacementState = {
   selectedDeviceId: null,
   wizardStatus: 'NO_WIZARD',
   invalidateKeyStatus: 'NOT_STARTED',

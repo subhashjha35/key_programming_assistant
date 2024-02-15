@@ -9,7 +9,7 @@ export interface AssistantState {
   isLoading: boolean;
 }
 
-const initialState: AssistantState = {
+export const initialState: AssistantState = {
   data: [],
   isLoading: false,
 };

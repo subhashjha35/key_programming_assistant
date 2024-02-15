@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideMockStore } from '@ngrx/store/testing';
 import { DeviceSelectionComponent } from './device-selection.component';
 
 describe('DeviceSelectionComponent', () => {
@@ -9,6 +11,10 @@ describe('DeviceSelectionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DeviceSelectionComponent],
+      providers: [
+        provideAnimationsAsync('noop'),
+        provideMockStore({ initialState: {} }),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DeviceSelectionComponent);

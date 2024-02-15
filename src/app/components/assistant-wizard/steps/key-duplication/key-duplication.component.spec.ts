@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideMockStore } from '@ngrx/store/testing';
 import { KeyDuplicationComponent } from './key-duplication.component';
 
 describe('KeyDuplicationComponent', () => {
@@ -10,7 +11,10 @@ describe('KeyDuplicationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [KeyDuplicationComponent],
-      providers: [provideAnimationsAsync('noop')],
+      providers: [
+        provideAnimationsAsync('noop'),
+        provideMockStore({ initialState: {} }),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(KeyDuplicationComponent);

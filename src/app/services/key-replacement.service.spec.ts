@@ -7,7 +7,9 @@ describe('KeyReplacementService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [KeyReplacementService],
+      providers: [
+        KeyReplacementService,
+      ],
     });
     service = TestBed.inject(KeyReplacementService);
   });
@@ -33,4 +35,9 @@ describe('KeyReplacementService', () => {
       m.expect(result$).toBeObservable(m.cold(expectedMarble, expectedValue));
     }),
   );
+
+  it('should get devices', () => {
+    expect(service.getDevices()).toEqual(service.devices)
+  });
+
 });
