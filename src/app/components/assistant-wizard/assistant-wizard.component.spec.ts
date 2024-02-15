@@ -25,13 +25,16 @@ describe('AssistantWizardComponent', () => {
       imports: [AssistantWizardComponent],
       providers: [
         provideAnimationsAsync('noop'),
-        provideMockStore({ initialState: {}, selectors: [
-          { selector: KeyReplacementReducers.selectKeyReplacementStatusLoading, value: false },
-          { selector: KeyReplacementReducers.selectIsInvalidateKeyInProgress, value: false }
-        ]}),
+        provideMockStore({
+          initialState: {},
+          selectors: [
+            { selector: KeyReplacementReducers.selectKeyReplacementStatusLoading, value: false },
+            { selector: KeyReplacementReducers.selectIsInvalidateKeyInProgress, value: false },
+          ],
+        }),
         { provide: MatDialog, useValue: dialogMock },
         { provide: KeyReplacementService, useValue: keyReplacementServiceMock },
-        { provide: ViewContainerRef, useValue: viewContainerRefMock }
+        { provide: ViewContainerRef, useValue: viewContainerRefMock },
       ],
     }).compileComponents();
     store = TestBed.inject(MockStore);
@@ -56,5 +59,4 @@ describe('AssistantWizardComponent', () => {
     component.setDevice(deviceId);
     expect(store.dispatch).toHaveBeenCalledWith(jasmine.any(Object));
   });
-
 });

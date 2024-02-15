@@ -15,15 +15,19 @@ describe('KeyProgrammingAssistantPageComponent', () => {
   let dialogSpy: jasmine.Spy;
 
   beforeEach(async () => {
-
     await TestBed.configureTestingModule({
       imports: [KeyProgrammingAssistantPageComponent],
       providers: [
         provideMockStore({
           initialState: {},
-          selectors: [{ selector: AssistantReducers.selectAssistantData, value: AssistantHelper.getAllAssistantFeatures() }]
+          selectors: [
+            {
+              selector: AssistantReducers.selectAssistantData,
+              value: AssistantHelper.getAllAssistantFeatures(),
+            },
+          ],
         }),
-      ]
+      ],
     }).compileComponents();
 
     store = TestBed.inject(MockStore);
@@ -31,7 +35,7 @@ describe('KeyProgrammingAssistantPageComponent', () => {
     spyOn(store, 'dispatch');
     spyOn(console, 'log');
 
-    dialogSpy = spyOn(dialog, 'open')
+    dialogSpy = spyOn(dialog, 'open');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dialogSpy.and.returnValue({ afterClosed: () => of(true) } as any);
 
@@ -45,8 +49,8 @@ describe('KeyProgrammingAssistantPageComponent', () => {
   });
 
   it('should dispatch the action', () => {
-    expect(store.dispatch).toHaveBeenCalledWith(AssistantActions.fetchAssistantData())
-  })
+    expect(store.dispatch).toHaveBeenCalledWith(AssistantActions.fetchAssistantData());
+  });
 
   it('should open dialog when startAssistant is called', () => {
     component.startAssistant();
@@ -80,5 +84,4 @@ describe('KeyProgrammingAssistantPageComponent', () => {
       disableClose: true,
     });
   });
-
 });

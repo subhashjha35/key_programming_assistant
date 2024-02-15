@@ -11,10 +11,7 @@ describe('KeyProgrammingComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [KeyProgrammingComponent],
-      providers: [
-        provideAnimationsAsync('noop'),
-        provideMockStore({ initialState: {} }),
-      ],
+      providers: [provideAnimationsAsync('noop'), provideMockStore({ initialState: {} })],
     }).compileComponents();
 
     fixture = TestBed.createComponent(KeyProgrammingComponent);

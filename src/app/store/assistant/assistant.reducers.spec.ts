@@ -3,7 +3,7 @@ import { AssistantActions, AssistantReducers } from '.';
 import { AssistantPageData } from '../../types/assistant';
 
 const mockAssistantData: AssistantPageData[] = [
-  { id: 'keyReplacementAssistant', content: '', isAvailable: true, name: 'keyReplacement' }
+  { id: 'keyReplacementAssistant', content: '', isAvailable: true, name: 'keyReplacement' },
 ];
 
 describe('AssistantReducers', () => {
@@ -13,7 +13,7 @@ describe('AssistantReducers', () => {
     initialState = {
       ...AssistantReducers.initialState,
       data: mockAssistantData,
-     };
+    };
   });
 
   it('should return the initial state', () => {
@@ -46,7 +46,6 @@ describe('AssistantReducers', () => {
     });
   });
 
-
   describe('AssistantSelectors', () => {
     it('should select device id', () => {
       const result = AssistantReducers.selectAssistantData.projector(initialState);
@@ -56,7 +55,12 @@ describe('AssistantReducers', () => {
 
     it('should select if invalidate key is in progress', () => {
       expect(AssistantReducers.selectIsAssistantDataLoading.projector(initialState)).toEqual(false);
-      expect(AssistantReducers.selectIsAssistantDataLoading.projector({...initialState, isLoading: true })).toEqual(true);
+      expect(
+        AssistantReducers.selectIsAssistantDataLoading.projector({
+          ...initialState,
+          isLoading: true,
+        }),
+      ).toEqual(true);
     });
   });
 });

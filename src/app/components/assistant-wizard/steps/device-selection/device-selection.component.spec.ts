@@ -11,10 +11,7 @@ describe('DeviceSelectionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DeviceSelectionComponent],
-      providers: [
-        provideAnimationsAsync('noop'),
-        provideMockStore({ initialState: {} }),
-      ],
+      providers: [provideAnimationsAsync('noop'), provideMockStore({ initialState: {} })],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DeviceSelectionComponent);

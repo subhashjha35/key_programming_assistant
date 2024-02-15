@@ -11,10 +11,7 @@ describe('KeyInvalidationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [KeyInvalidationComponent],
-      providers: [
-        provideAnimationsAsync('noop'),
-        provideMockStore({ initialState: {} }),
-      ],
+      providers: [provideAnimationsAsync('noop'), provideMockStore({ initialState: {} })],
     }).compileComponents();
 
     fixture = TestBed.createComponent(KeyInvalidationComponent);

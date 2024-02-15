@@ -106,13 +106,13 @@ describe('KeyReplacementReducers', () => {
 
     it('should select if key replacement is in progress', () => {
       expect(
-        KeyReplacementReducers.selectKeyReplacementStatusLoading.projector(true, false)
+        KeyReplacementReducers.selectKeyReplacementStatusLoading.projector(true, false),
       ).toEqual(true);
       expect(
-        KeyReplacementReducers.selectKeyReplacementStatusLoading.projector(true, true)
+        KeyReplacementReducers.selectKeyReplacementStatusLoading.projector(true, true),
       ).toEqual(true);
       expect(
-        KeyReplacementReducers.selectKeyReplacementStatusLoading.projector(false, false)
+        KeyReplacementReducers.selectKeyReplacementStatusLoading.projector(false, false),
       ).toEqual(false);
     });
   });
